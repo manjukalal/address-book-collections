@@ -13,7 +13,6 @@ public class Contact {
     Contact(String firstName, String lastName, String address, String city, String state, int zip, long phoneNumber, String email) {
         this.setFirstName(firstName);
         this.setLastName(lastName);
-        ;
         this.setAddress(address);
         this.setCity(city);
         this.setState(state);
