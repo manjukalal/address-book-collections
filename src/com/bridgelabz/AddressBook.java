@@ -15,8 +15,8 @@ public class AddressBook {
         AddressBook details = new AddressBook();
 
         while (i == 0) {
-
-            System.out.println("1.Add details.\n2.Edit details.");
+            System.out.println("What you want to do: ");
+            System.out.println("1.Add details.\n2.Edit details.\n3.Delete the details");
             int choose = scanner.nextInt();
             switch (choose) {
                 case 1:
@@ -24,6 +24,9 @@ public class AddressBook {
                     break;
                 case 2:
                     details.editDetails();
+                    break;
+                case 3:
+                    details.deleteDetails();
                     break;
                 default:
                     i = 1;
@@ -49,11 +52,11 @@ public class AddressBook {
         details.setCity(scanner.nextLine());
         System.out.println("Enter the State ");
         details.setState(scanner.nextLine());
-        System.out.println("Enter the Email ");
+        System.out.println("Enter the Emai");
         details.setEmail(scanner.nextLine());
         System.out.println("Enter the Zip code ");
         details.setZipCode(scanner.nextInt());
-        System.out.println("Enter the mobile number ");
+        System.out.println("Enter the mobile number");
         details.setPhoneNumber(scanner.nextInt());
 
         Book.add(details);
@@ -118,4 +121,19 @@ public class AddressBook {
 
         System.out.println(Book);
     }
+
+    public void deleteDetails() {
+
+        System.out.println("Confirm your first name to delete details: ");
+        String name = scanner.next();
+
+        for (int i = 0; i < Book.size(); i++) {
+            if (Book.get(i).getFirstName().equals(name)) {
+                System.out.println("Select form below to change: ");
+                Book.remove(i);
+            }
+        }
+        System.out.println(Book);
+    }
+
 }
